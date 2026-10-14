@@ -1,45 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:columnCount="2"
+    android:rowCount="3"
+    android:padding="16dp"
+    android:useDefaultMargins="true">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/texto"
-        android:text="probando el text view"
-        android:textColor="#DCDCDC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Probando el TextView"
+        android:textColor="#333333"
         android:textStyle="bold"
-        android:textSize="12sp"
-        android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Mover"
-        app:layout_constraintTop_toBottomOf="@id/texto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/button2"
-        app:layout_constraintHorizontal_chainStyle="spread" />
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:text="Mover" />
 
     <Button
         android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:text="Rotar" />
+
+    <ToggleButton
+        android:id="@+id/miToggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rotar"
-        app:layout_constraintTop_toTopOf="@id/button1"
-        app:layout_constraintStart_toEndOf="@id/button1"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_columnSpan="2"
+        android:layout_gravity="center"
+        android:textOn="Pulsado"
+        android:textOff="No pulsado" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/miImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_gravity="center"
+        android:src="@drawable/serrod"
+    />
+
+    <EditText
+        android:id="@+id/numero"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_gravity="center"
+        android:hint="Ingrese su numero"
+        android:inputType="phone"
+    />
+</GridLayout>
